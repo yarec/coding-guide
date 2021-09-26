@@ -120,7 +120,7 @@
   | C-x v+  | update          | ×  |        |
   | C-x vd  | vc-dir          | ×  |        |
   | C-x vu  | revert          | ×  |        |
-  |         |                 |     |        |
+  | C-x vP  | push            | x   |        |
 
   next action:
 ** add file
