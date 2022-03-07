@@ -1,7 +1,7 @@
-
+    
 ## Init
 ```
-pnpm init @vitejs/app   or   yarn create @vitejs/app
+pnpm init vite  or  yarn create vite
 ```
 
 ## Kea
@@ -44,10 +44,57 @@ const App = () => {
 ## Db
 
 ```
-yarn add dexie
+pnpm add dexie
 ```
 
 ## Router
+
+### basic
+
+```
+pnpm add react-router-dom
+```
+
+src/routes/index.jsx
+```
+import React from 'react';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import Demo from '../views/Demo/index';
+import Home from '../views/Home/index';
+
+const routerList = () => (
+  <Switch>
+    <Route path="/" render={() => <Redirect to="/home" />} exact key="first" />
+    <Route path="/demo" component={Demo} key="demo" />
+    <Route path="/home" component={Home} key="home" />
+  </Switch>
+);
+
+export default routerList;
+```
+
+App.js
+
+```
+import React from 'react';
+ + import Routes from './routes';
+ + import { BrowserRouter } from 'react-router-dom';
+
+import './App.css';
+
+function App() {
+  return (
+   + <BrowserRouter>
+   +   <Routes />
+   + </BrowserRouter>
+  );
+}
+
+export default App;
+
+```
+
+### pages router
 ```
 yarn add -D vite-plugin-pages @vitejs/plugin-vue @vue/compiler-sfc
 yarn add react-router react-router-dom react-router-config
@@ -112,6 +159,8 @@ export default () => {
 
 }
 ```
+
+https://github.com/vitejs/vite-plugin-react-pages
 
 ## Test
 
@@ -212,3 +261,35 @@ vite.config.js:
     ],
   },
 ```
+
+## Formily
+
+```
+mkdir my-app & cd my-app
+npm create @umijs/umi-app
+pnpm i
+pnpm add @formily/core @formily/react @formily/antd antd moment
+```
+
+## starter
+
+### kea, pages, antd
+
+
+```sh
+pnpm init @vitejs/app
+pnpm add react-router-dom
+pnpm add reselect redux react-redux kea
+pnpm add -D vite-plugin-pages @vitejs/plugin-vue @vue/compiler-sfc
+pnpm add -D less vite-plugin-imp
+pnpm add react-router react-router-dom react-router-config
+```
+
+## Doc
+
+Vite2 + React + Antd 踩坑指南
+https://www.jianshu.com/p/8686469a6f0e
+
+
+Vite 2.x + React + Ant Design 应用开发从入门到框架实现
+https://zhuanlan.zhihu.com/p/362152434

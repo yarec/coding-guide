@@ -83,6 +83,10 @@
   |         |              |
 
 ## Markdown
+  | 按键 | 说明    | SPC |
+  |------|---------|-----|
+  | mit  | gen toc | √  |
+  |      |         |     |
 
 # Developement
  dev

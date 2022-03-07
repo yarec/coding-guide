@@ -227,28 +227,28 @@ public:
 
 ##### CameraDirector.cpp
 ```cpp
-// 版权所有 1998-2017 Epic Games, Inc。保留所有权利。
+// Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
 #include "HowTo_AutoCamera.h"
 #include "CameraDirector.h"
 #include "Kismet/GameplayStatics.h"
 
-// 设置默认值
+// Sets default values
 ACameraDirector::ACameraDirector()
 {
-    // 将此Actor设置为每一帧调用Tick()。如果不需要，可以关闭此选项来提高性能。
+    // Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
 
 }
 
-// 当游戏开始或生成时调用
+// Called when the game starts or when spawned
 void ACameraDirector::BeginPlay()
 {
     Super::BeginPlay();
 
 }
 
-// 每一帧调用
+// Called every frame
 void ACameraDirector::Tick( float DeltaTime )
 {
     Super::Tick( DeltaTime );
@@ -260,6 +260,23 @@ void ACameraDirector::Tick( float DeltaTime )
     {
         TimeToNextCameraChange += TimeBetweenCameraChanges;
 
+        //Find the actor that handles control for the local player.
+        APlayerController* OurPlayerController = UGameplayStatics::GetPlayerController(this, 0);
+        if (OurPlayerController)
+        {
+            if (CameraTwo && (OurPlayerController->GetViewTarget() == CameraOne))
+            {
+                //Blend smoothly to camera two.
+                OurPlayerController->SetViewTargetWithBlend(CameraTwo, SmoothBlendTime);
+            }
+            else if (CameraOne)
+            {
+                //Cut instantly to camera one.
+                OurPlayerController->SetViewTarget(CameraOne);
+            }
+        }
+    }
+}
 ```
 
 #### 变量、定时器和事件
