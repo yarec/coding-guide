@@ -282,7 +282,7 @@ pnpm add react-router-dom
 pnpm add reselect redux react-redux kea
 pnpm add -D vite-plugin-pages @vitejs/plugin-vue @vue/compiler-sfc
 pnpm add -D less vite-plugin-imp
-pnpm add react-router react-router-dom react-router-config
+    pnpm add react-router react-router-dom react-router-config
 ```
 
 ## Doc
