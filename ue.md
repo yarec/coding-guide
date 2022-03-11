@@ -1050,10 +1050,10 @@ world machine
 
 
 - 入门：ue基础，蓝图，c++，官方c++指南，
-    -[【虚幻4】UE4初学者系列教程合集-全中文新手入门教程](https://www.bilibili.com/video/BV164411Y732) 
-    - UE4 C++ 入门（无参考项目）
-    - 虚幻四C++入坑指南合集版
-    - UE4 3D_RPG独立游戏开发基础入门全流程（C++）
+    - [UE4初学者系列教程合集-全中文新手入门教程](https://www.bilibili.com/video/BV164411Y732) 
+    - [UE4 C++ 入门（无参考项目）](https://www.bilibili.com/video/BV1RE411d7J8)
+    - [虚幻四C++入坑指南合集版](https://www.bilibili.com/video/BV14K411J7v2)
+    - [UE4 3D_RPG独立游戏开发基础入门全流程（C++）](https://www.bilibili.com/video/BV11o4y1m72m)
 - 进阶：技能点亮，定制游戏模版，骨骼动画，材质，灯光，地编...
 - 高级：成品游戏，rpg,fps
 
